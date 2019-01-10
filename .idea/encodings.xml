@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../itrip" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../itrip/itrip-auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../itrip/itrip-beans" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../itrip/itrip-biz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../itrip/itrip-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../itrip/itrip-search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../itrip/itrip-utils" charset="UTF-8" />
+  </component>
+</project>

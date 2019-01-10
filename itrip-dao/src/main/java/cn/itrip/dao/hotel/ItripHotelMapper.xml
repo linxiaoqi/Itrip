@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itrip.dao.hotel.ItripHotelMapper">
+
+    <select id="getItripHotelById" resultType="cn.itrip.beans.pojo.ItripHotel" >
+       SELECT details FROM itrip_hotel  WHERE cityId=2 GROUP BY cityId
+    </select>
+
+    <select id="getItripInfoById" resultType="cn.itrip.beans.pojo.ItripHotel" parameterType="cn.itrip.beans.pojo.ItripHotel">
+      SELECT * FROM itrip_hotel WHERE id=#{cityId}
+    </select>
+
+    <select id="getHotelImgById" resultType="cn.itrip.beans.pojo.ItripImage" >
+        SELECT * FROM itrip_image WHERE type=0 AND targetId=#{targetId}
+    </select>
+
+</mapper>

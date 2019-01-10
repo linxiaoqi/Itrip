@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itrip.dao.hotel.ItripHotelVideoDescVoMapper">
+
+    <select id="getHotelVideoById" resultType="cn.itrip.beans.pojo.ItripHotel" >
+       SELECT * FROM itrip_hotel  WHERE id=#{id};
+    </select>
+
+    <select id="hotelFeatureList" resultType="String" >
+         select labelDic.name from itrip_hotel_feature feature,
+         itrip_label_dic labelDic,itrip_hotel hotel where feature.hotelId = hotel.id
+         and feature.featureId = labelDic.id and hotel.id = #{id};
+
+    </select>
+
+    <select id="tradingAreaNameList" resultType="String" >
+        select name from itrip_hotel_trading_area,
+        itrip_area_dic where areaId = itrip_area_dic.id and hotelId = #{id}
+    </select>
+</mapper>
