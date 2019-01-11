@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestItripUserMapper {
 
 
-    @Test
+ /*   @Test
     public void testGetItripUserById() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
@@ -19,5 +19,5 @@ public class TestItripUserMapper {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }

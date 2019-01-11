@@ -19,7 +19,7 @@ public interface ItripCommentService {
     public Integer getItripCountByMap(Map<String, Object> param)throws Exception;
 
     //查询评论附带的图片
-    public List<ItripImage> getCommentImgByMap(Map<String,Object> param) throws Exception;
+    public List<ItripImage> getCommentImgByMap(Map<String, Object> param) throws Exception;
 
     public List<ItripLabelDic>	getItripLabelDicListByMap(Map<String, Object> param)throws Exception;
 

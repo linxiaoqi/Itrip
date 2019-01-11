@@ -14,16 +14,16 @@ public interface ItripHotelOrderService {
     public ItripPersonalOrderRoomVO getpersonalorderroominfo(@Param("hotelId") Integer hotelId) throws Exception;
 
     //预生成订单信息
-    public List<ItripHotelOrder> getProorderInfoByMap(Map<String,Object> param) throws Exception;
+    public List<ItripHotelOrder> getProorderInfoByMap(Map<String, Object> param) throws Exception;
 
-    public Integer getProorderInfo(Map<String,Object> param)throws Exception;
+    public Integer getProorderInfo(Map<String, Object> param)throws Exception;
 
     //查询个人酒店订单列表
-    public PageInfo getpersonalorderlist(Map<String,Object> param, Integer pageNo, Integer pageSize) throws Exception;
+    public PageInfo getpersonalorderlist(Map<String, Object> param, Integer pageNo, Integer pageSize) throws Exception;
 
     //添加订单
     public Integer addhotelorder(ItripHotelOrder itripHotelOrder) throws Exception;
 
     //获取个人订单信息
-    public List<ItripHotelOrder> getpersonalorderinfo(Map<String,Object> param) throws Exception;
+    public List<ItripHotelOrder> getpersonalorderinfo(Map<String, Object> param) throws Exception;
 }
