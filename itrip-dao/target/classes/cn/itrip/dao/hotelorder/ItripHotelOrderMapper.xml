@@ -255,8 +255,4 @@ hotel.id = hotelorder.hotelId AND room.id = hotelorder.roomId AND hotelorder.id 
             </if>
         </trim>
     </select>
-
-    <select id="getpersonalorderlist" resultType="cn.itrip.beans.pojo.ItripHotelOrder">
-        SELECT * FROM itrip_hotel_order
-    </select>
 </mapper>

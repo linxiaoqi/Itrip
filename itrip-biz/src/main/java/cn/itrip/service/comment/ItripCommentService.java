@@ -5,6 +5,8 @@ import cn.itrip.beans.pojo.ItripHotel;
 import cn.itrip.beans.pojo.ItripImage;
 import cn.itrip.beans.pojo.ItripLabelDic;
 import cn.itrip.beans.vo.comment.ItripScoreCommentVO;
+import cn.itrip.beans.vo.comment.ItripSearchCommentVO;
+import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -31,4 +33,7 @@ public interface ItripCommentService {
 
     //新增评论
     public Integer addCommentInfo(ItripComment comment) throws Exception;
+
+    //查询评论内容列表
+    public PageInfo getcommentlist(ItripSearchCommentVO searchCommentVO) throws Exception;
 }

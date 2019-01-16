@@ -5,7 +5,10 @@ import cn.itrip.beans.pojo.ItripHotel;
 import cn.itrip.beans.pojo.ItripImage;
 import cn.itrip.beans.pojo.ItripLabelDic;
 import cn.itrip.beans.vo.comment.ItripScoreCommentVO;
+import cn.itrip.beans.vo.comment.ItripSearchCommentVO;
 import cn.itrip.dao.comment.ItripCommentMapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -53,5 +56,26 @@ public class ItripCommentServiceImpl implements ItripCommentService {
     public Integer addCommentInfo(ItripComment comment) throws Exception {
         return itripCommentMapper.addCommentInfo(comment);
     }
+
+    @Override
+    public PageInfo getcommentlist(ItripSearchCommentVO searchCommentVO) throws Exception {
+        PageHelper.startPage(searchCommentVO.getPageNo(),searchCommentVO.getPageSize());
+        ItripComment itripComment  = new ItripComment();
+        itripComment.setHotelId(searchCommentVO.getHotelId());
+        if (searchCommentVO.getIsOk()!=-1){
+            itripComment.setIsOk(searchCommentVO.getIsOk());
+        }else {
+            itripComment.setIsOk(null);
+        }
+        if (searchCommentVO.getIsHavingImg()!=-1){
+            itripComment.setIsHavingImg(searchCommentVO.getIsHavingImg());
+        }else{
+            itripComment.setIsHavingImg(null);
+        }
+        List<ItripComment> itripComments = itripCommentMapper.getcommentlist(itripComment);
+        PageInfo pageInfo = new PageInfo(itripComments);
+        return pageInfo;
+    }
+
 
 }

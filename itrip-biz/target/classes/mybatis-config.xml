@@ -12,10 +12,4 @@
         <!--这里给实体类取别名，方便在mapper配置文件中使用-->
         <package name="cn.itrip.beans.pojo"/>
     </typeAliases>
-
-  <!--  <plugins>-->
-        <!-- com.github.pagehelper为PageHelper类所在包名 -->
-    <!--    <plugin interceptor="com.github.pagehelper.PageInterceptor">
-        </plugin>
-    </plugins>-->
    </configuration>

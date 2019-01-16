@@ -172,4 +172,67 @@
                     )
     </insert>
 
+    <select id="getcommentlist" resultType="cn.itrip.beans.pojo.ItripComment">
+        select * from itrip_comment
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test=" hotelId != null">
+                and hotelId =#{hotelId}
+            </if>
+            <if test=" isOk != null">
+                and isOk =#{isOk}
+            </if>
+            <if test=" isHavingImg != null">
+                and isHavingImg =#{isHavingImg}
+            </if>
+            <if test=" id != null">
+                and id=#{id}
+            </if>
+            <if test=" productId != null">
+                and productId=#{productId}
+            </if>
+            <if test=" orderId != null">
+                and orderId=#{orderId}
+            </if>
+            <if test=" productType != null and productType!=''">
+                and productType=#{productType}
+            </if>
+            <if test=" content != null and content!=''">
+                and content=#{content}
+            </if>
+            <if test=" userId != null">
+                and userId=#{userId}
+            </if>
+            <if test="  positionScore!= null">
+                and positionScore=#{positionScore}
+            </if>
+            <if test=" facilitiesScore != null">
+                and =facilitiesScore#{facilitiesScore}
+            </if>
+            <if test=" serviceScore != null">
+                and =#{serviceScore}
+            </if>
+            <if test=" hygieneScore != null">
+                and hygieneScore=#{hygieneScore}
+            </if>
+            <if test=" score != null ">
+                and score=#{score}
+            </if>
+            <if test=" tripMode != null ">
+                and tripMode=#{tripMode}
+            </if>
+            <if test="creationDate != null">
+                and creationDate=#{creationDate}
+            </if>
+            <if test="createdBy != null ">
+                and createdBy=#{createdBy}
+            </if>
+            <if test="modifyDate != null">
+                and modifyDate=#{modifyDate}
+            </if>
+            <if test="modifiedBy != null ">
+                and modifiedBy=#{modifiedBy}
+            </if>
+        </trim>
+        order by creationDate desc
+    </select>
 </mapper>
