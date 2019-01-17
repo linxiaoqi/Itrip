@@ -77,5 +77,10 @@ public class ItripCommentServiceImpl implements ItripCommentService {
         return pageInfo;
     }
 
+   /* @Override
+    public ItripComment addCommentInfoByMap(Map<String, Object> param) throws Exception {
+        return itripCommentMapper.addCommentInfoByMap(param);
+    }
+*/
 
 }

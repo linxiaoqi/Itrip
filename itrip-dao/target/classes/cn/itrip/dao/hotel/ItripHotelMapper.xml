@@ -16,4 +16,7 @@
         SELECT * FROM itrip_image WHERE type=0 AND targetId=#{targetId}
     </select>
 
+    <select id="getItripHotelByIds" resultType="cn.itrip.beans.pojo.ItripHotel" parameterType="cn.itrip.beans.pojo.ItripHotel">
+      SELECT * FROM itrip_hotel WHERE id=#{id}
+    </select>
 </mapper>

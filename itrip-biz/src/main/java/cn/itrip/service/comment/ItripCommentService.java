@@ -36,4 +36,7 @@ public interface ItripCommentService {
 
     //查询评论内容列表
     public PageInfo getcommentlist(ItripSearchCommentVO searchCommentVO) throws Exception;
+
+   /* //添加评论
+    public ItripComment addCommentInfoByMap(Map<String ,Object> param) throws Exception;*/
 }

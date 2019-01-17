@@ -14,4 +14,6 @@ public interface ItripHotelService {
 
     //查询酒店图片
     public List<ItripImage> getHotelImgById(Map<String, Object> param) throws Exception;
+
+    public ItripHotel getItripHotelByIds(@Param("id") Long id)throws Exception;
 }

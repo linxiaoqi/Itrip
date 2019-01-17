@@ -6,24 +6,50 @@
 
     <select id="getqueryhotelroomListByMap" resultType="cn.itrip.beans.vo.hotelroom.ItripHotelRoomVO">
         select
-        hotelId as hotelId,
         id as id,
+        hotelId as hotelId,
+        isBook as isBook,
+        roomTitle as roomTitle,
+        roomPrice as roomPrice,
+        roomBedTypeId as roomBedTypeId,
+        isHavingBreakfast as isHavingBreakfast,
+        payType as payType,
+        satisfaction as satisfaction,
         isBook as isBook,
         isCancel as isCancel,
-        isHavingBreakfast as isHavingBreakfast,
         isTimelyResponse as isTimelyResponse,
-        payType as payType,
-        roomBedTypeId as roomBedTypeId,
-        roomPrice as roomPrice,
-        roomTitle as roomTitle,
-        satisfaction as satisfaction
+        creationDate as creationDate,
+        createdBy as createdBy,
+        modifyDate as modifyDate,
+        modifiedBy as modifiedBy
         from itrip_hotel_room
         <trim prefix="where" prefixOverrides="and | or">
+            <if test="id != null and id != ''">
+                and id=#{id}
+            </if>
             <if test="hotelId != null and hotelId!=''">
                 and hotelId=#{hotelId}
             </if>
-            <if test="id != null and id != ''">
-                and id=#{id}
+            <if test="isBook != null and isBook!=''">
+                and isBook=#{isBook}
+            </if>
+            <if test="roomTitle != null and roomTitle!=''">
+                and roomTitle=#{roomTitle}
+            </if>
+            <if test="roomPrice != null and roomPrice!=''">
+                and roomPrice=#{roomPrice}
+            </if>
+            <if test="roomBedTypeId != null and roomBedTypeId!=''">
+                and roomBedTypeId=#{roomBedTypeId}
+            </if>
+            <if test="isHavingBreakfast != null and isHavingBreakfast!=''">
+                and isHavingBreakfast=#{isHavingBreakfast}
+            </if>
+            <if test="payType != null and payType!=''">
+                and payType=#{payType}
+            </if>
+            <if test="satisfaction != null and satisfaction!=''">
+                and satisfaction=#{satisfaction}
             </if>
             <if test="isBook != null and isBook!=''">
                 and isBook=#{isBook}
@@ -31,27 +57,94 @@
             <if test="isCancel != null and isCancel!=''">
                 and isCancel=#{isCancel}
             </if>
-            <if test="isHavingBreakfast != null and isHavingBreakfast!=''">
-                and isHavingBreakfast=#{isHavingBreakfast}
-            </if>
             <if test="isTimelyResponse != null and isTimelyResponse!=''">
                 and isTimelyResponse=#{isTimelyResponse}
             </if>
-            <if test="payType != null and payType!=''">
-                and payType=#{payType}
+            <if test="creationDate != null and creationDate!=''">
+                and creationDate=#{creationDate}
             </if>
-            <if test="roomBedTypeId != null and roomBedTypeId!=''">
-                and roomBedTypeId=#{roomBedTypeId}
+            <if test="createdBy != null and createdBy!=''">
+                and createdBy=#{createdBy}
             </if>
-            <if test="roomPrice != null and roomPrice!=''">
-                and roomPrice=#{roomPrice}
+            <if test="modifyDate != null and modifyDate!=''">
+                and modifyDate=#{modifyDate}
+            </if>
+            <if test="modifiedBy != null and modifiedBy!=''">
+                and modifiedBy=#{modifiedBy}
+            </if>
+        </trim>
+    </select>
+
+
+    <select id="getItripHotelRoomById" resultType="cn.itrip.beans.pojo.ItripHotelRoom">
+        select
+        id as id,
+        hotelId as hotelId,
+        isBook as isBook,
+        roomTitle as roomTitle,
+        roomPrice as roomPrice,
+        roomBedTypeId as roomBedTypeId,
+        isHavingBreakfast as isHavingBreakfast,
+        payType as payType,
+        satisfaction as satisfaction,
+        isBook as isBook,
+        isCancel as isCancel,
+        isTimelyResponse as isTimelyResponse,
+        creationDate as creationDate,
+        createdBy as createdBy,
+        modifyDate as modifyDate,
+        modifiedBy as modifiedBy
+        from itrip_hotel_room
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="id != null and id != ''">
+                and id=#{id}
+            </if>
+            <if test="hotelId != null and hotelId!=''">
+                and hotelId=#{hotelId}
+            </if>
+            <if test="isBook != null and isBook!=''">
+                and isBook=#{isBook}
             </if>
             <if test="roomTitle != null and roomTitle!=''">
                 and roomTitle=#{roomTitle}
             </if>
+            <if test="roomPrice != null and roomPrice!=''">
+                and roomPrice=#{roomPrice}
+            </if>
+            <if test="roomBedTypeId != null and roomBedTypeId!=''">
+                and roomBedTypeId=#{roomBedTypeId}
+            </if>
+            <if test="isHavingBreakfast != null and isHavingBreakfast!=''">
+                and isHavingBreakfast=#{isHavingBreakfast}
+            </if>
+            <if test="payType != null and payType!=''">
+                and payType=#{payType}
+            </if>
             <if test="satisfaction != null and satisfaction!=''">
                 and satisfaction=#{satisfaction}
             </if>
+            <if test="isBook != null and isBook!=''">
+                and isBook=#{isBook}
+            </if>
+            <if test="isCancel != null and isCancel!=''">
+                and isCancel=#{isCancel}
+            </if>
+            <if test="isTimelyResponse != null and isTimelyResponse!=''">
+                and isTimelyResponse=#{isTimelyResponse}
+            </if>
+            <if test="creationDate != null and creationDate!=''">
+                and creationDate=#{creationDate}
+            </if>
+            <if test="createdBy != null and createdBy!=''">
+                and createdBy=#{createdBy}
+            </if>
+            <if test="modifyDate != null and modifyDate!=''">
+                and modifyDate=#{modifyDate}
+            </if>
+            <if test="modifiedBy != null and modifiedBy!=''">
+                and modifiedBy=#{modifiedBy}
+            </if>
         </trim>
     </select>
+
 </mapper>

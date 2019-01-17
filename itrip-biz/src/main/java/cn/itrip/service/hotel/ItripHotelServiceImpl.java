@@ -30,4 +30,9 @@ public class ItripHotelServiceImpl implements ItripHotelService{
         return itripHotelMapper.getHotelImgById(param);
     }
 
+    @Override
+    public ItripHotel getItripHotelByIds(Long id) throws Exception {
+        return itripHotelMapper.getItripHotelByIds(id);
+    }
+
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 
 @Service
@@ -17,7 +18,12 @@ public class ItripHotelRoomServiceImpl implements ItripHotelRoomService{
 
 
     @Override
-    public List<ItripHotelRoom> getqueryhotelroomListByMap(ItripHotelRoomVO roomVO)throws Exception{
-        return hotelRoomMapper.getqueryhotelroomListByMap(roomVO);
+    public List<ItripHotelRoomVO> getqueryhotelroomListByMap(Map<String, Object> param) throws Exception {
+        return hotelRoomMapper.getqueryhotelroomListByMap(param);
+    }
+
+    @Override
+    public ItripHotelRoom getItripHotelRoomById(Long id) throws Exception {
+        return hotelRoomMapper.getItripHotelRoomById(id);
     }
 }

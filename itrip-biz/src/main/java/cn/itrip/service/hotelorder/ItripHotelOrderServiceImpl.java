@@ -1,6 +1,7 @@
 package cn.itrip.service.hotelorder;
 
 import cn.itrip.beans.pojo.ItripHotelOrder;
+import cn.itrip.beans.pojo.ItripUserLinkUser;
 import cn.itrip.beans.vo.order.ItripPersonalOrderRoomVO;
 import cn.itrip.dao.hotelorder.ItripHotelOrderMapper;
 import com.github.pagehelper.PageHelper;
@@ -8,6 +9,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -42,14 +44,44 @@ public class ItripHotelOrderServiceImpl implements ItripHotelOrderService{
         return pageInfo;
     }
 
-    @Override
+    /*@Override
     public Integer addhotelorder(ItripHotelOrder itripHotelOrder) throws Exception {
         return hotelOrderMapper.addhotelorder(itripHotelOrder);
-    }
+    }*/
 
     @Override
     public List<ItripHotelOrder> getpersonalorderinfo(Map<String, Object> param) throws Exception {
         return hotelOrderMapper.getpersonalorderinfo(param);
+    }
+
+    @Override
+    public BigDecimal getOrderPayAmount(int count, Long roomId) throws Exception {
+        return hotelOrderMapper.getOrderPayAmount(count,roomId);
+    }
+
+    @Override
+    public Map<String, String> itriptxAddItripHotelOrder(ItripHotelOrder itripHotelOrder, List<ItripUserLinkUser> itripOrderLinkUserList) throws Exception {
+        return hotelOrderMapper.itriptxAddItripHotelOrder(itripHotelOrder,itripOrderLinkUserList);
+    }
+
+    @Override
+    public ItripHotelOrder getItripHotelOrderById(Long id) throws Exception {
+        return hotelOrderMapper.getItripHotelOrderById(id);
+    }
+
+    @Override
+    public boolean flushOrderStatus(Integer type) throws Exception {
+        return hotelOrderMapper.flushOrderStatus(type);
+    }
+
+    @Override
+    public Integer itriptxModifyItripHotelOrder(ItripHotelOrder itripHotelOrder) throws Exception {
+        return hotelOrderMapper.itriptxModifyItripHotelOrder(itripHotelOrder);
+    }
+
+    @Override
+    public List<ItripHotelOrder> getItripHotelOrderListByMap(Map<String, Object> param) throws Exception {
+        return hotelOrderMapper.getItripHotelOrderListByMap(param);
     }
 
 }
