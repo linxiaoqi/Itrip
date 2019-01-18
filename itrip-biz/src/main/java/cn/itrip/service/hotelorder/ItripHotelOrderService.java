@@ -29,16 +29,12 @@ public interface ItripHotelOrderService {
     //获取个人订单信息
     public List<ItripHotelOrder> getpersonalorderinfo(Map<String, Object> param) throws Exception;
 
+    //
     public BigDecimal getOrderPayAmount(int count, Long roomId) throws Exception;
 
+    //
     public Map<String, String> itriptxAddItripHotelOrder(ItripHotelOrder itripHotelOrder, List<ItripUserLinkUser> itripOrderLinkUserList)throws Exception;
 
     public ItripHotelOrder getItripHotelOrderById(Long id)throws Exception;
-
-    public boolean flushOrderStatus(Integer type)throws Exception;
-
-    public Integer itriptxModifyItripHotelOrder(ItripHotelOrder itripHotelOrder)throws Exception;
-
-    public List<ItripHotelOrder> getItripHotelOrderListByMap(Map<String,Object> param)throws Exception;
 
 }

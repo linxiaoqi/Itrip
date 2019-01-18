@@ -12,5 +12,8 @@ public interface ItripHotelTempStoreMapper {
 
     public boolean validateRoomStore(Map<String,Object> param)throws Exception;
 
-    public boolean updateRoomStore(Map<String, Object> param) throws Exception;
+    public Integer updateRoomStore(Map<String, Object> param) throws Exception;
+
+    public void flushStore(Map<String, Object> paramMap) throws Exception;
+
 }
